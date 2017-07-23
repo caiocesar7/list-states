@@ -1,0 +1,233 @@
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'SetQuery') {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{query: _p0._0}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		} else {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{tableState: _p0._0}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		}
+	});
+var _user$project$Main$init = function (people) {
+	var model = {
+		people: people,
+		tableState: _user$project$Table$initialSort('Name'),
+		query: ''
+	};
+	return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+};
+var _user$project$Main$Model = F3(
+	function (a, b, c) {
+		return {people: a, tableState: b, query: c};
+	});
+var _user$project$Main$Capital = F2(
+	function (a, b) {
+		return {name: a, city: b};
+	});
+var _user$project$Main$states = {
+	ctor: '::',
+	_0: A2(_user$project$Main$Capital, 'Amazonas', 'Manaus'),
+	_1: {
+		ctor: '::',
+		_0: A2(_user$project$Main$Capital, 'São Paulo', 'São Paulo'),
+		_1: {
+			ctor: '::',
+			_0: A2(_user$project$Main$Capital, 'Roraima', 'Boa Vista'),
+			_1: {
+				ctor: '::',
+				_0: A2(_user$project$Main$Capital, 'Rio de Janeiro', 'Rio de Janeiro'),
+				_1: {
+					ctor: '::',
+					_0: A2(_user$project$Main$Capital, 'Bahia', 'Salvador'),
+					_1: {
+						ctor: '::',
+						_0: A2(_user$project$Main$Capital, 'Rio Grande do Sul', 'Porto Alegre'),
+						_1: {
+							ctor: '::',
+							_0: A2(_user$project$Main$Capital, 'Rio Grande do Norte', 'Natal'),
+							_1: {
+								ctor: '::',
+								_0: A2(_user$project$Main$Capital, 'Rondônia', 'Porto Velho'),
+								_1: {
+									ctor: '::',
+									_0: A2(_user$project$Main$Capital, 'Pará', 'Belém'),
+									_1: {
+										ctor: '::',
+										_0: A2(_user$project$Main$Capital, 'Mato Grosso', 'Cuiabá'),
+										_1: {
+											ctor: '::',
+											_0: A2(_user$project$Main$Capital, 'Mato Grosso do Sul', 'Campo Grande'),
+											_1: {
+												ctor: '::',
+												_0: A2(_user$project$Main$Capital, 'Acre', 'Rio Branco'),
+												_1: {
+													ctor: '::',
+													_0: A2(_user$project$Main$Capital, 'Espírito Santo', 'Vitória'),
+													_1: {
+														ctor: '::',
+														_0: A2(_user$project$Main$Capital, 'Santa Catarina', 'Florianópolis'),
+														_1: {
+															ctor: '::',
+															_0: A2(_user$project$Main$Capital, 'Paraná', 'Curitiba'),
+															_1: {
+																ctor: '::',
+																_0: A2(_user$project$Main$Capital, 'Alagoas', 'Maceió'),
+																_1: {
+																	ctor: '::',
+																	_0: A2(_user$project$Main$Capital, 'Amapá', 'Macapá'),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(_user$project$Main$Capital, 'Ceará', 'Fortaleza'),
+																		_1: {
+																			ctor: '::',
+																			_0: A2(_user$project$Main$Capital, 'Distrito Federal', 'Brasília'),
+																			_1: {
+																				ctor: '::',
+																				_0: A2(_user$project$Main$Capital, 'Goiás', 'Goiânia'),
+																				_1: {
+																					ctor: '::',
+																					_0: A2(_user$project$Main$Capital, 'Maranhão', 'São Luís'),
+																					_1: {
+																						ctor: '::',
+																						_0: A2(_user$project$Main$Capital, 'Paraíba', 'João Pessoa'),
+																						_1: {
+																							ctor: '::',
+																							_0: A2(_user$project$Main$Capital, 'Pernambuco', 'Recife'),
+																							_1: {
+																								ctor: '::',
+																								_0: A2(_user$project$Main$Capital, 'Piauí', 'Teresina'),
+																								_1: {
+																									ctor: '::',
+																									_0: A2(_user$project$Main$Capital, 'Sergipe', 'Aracaju'),
+																									_1: {
+																										ctor: '::',
+																										_0: A2(_user$project$Main$Capital, 'Tocantis', 'Palmas'),
+																										_1: {ctor: '[]'}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Main$SetTableState = function (a) {
+	return {ctor: 'SetTableState', _0: a};
+};
+var _user$project$Main$config = _user$project$Table$config(
+	{
+		toId: function (_) {
+			return _.name;
+		},
+		toMsg: _user$project$Main$SetTableState,
+		columns: {
+			ctor: '::',
+			_0: A2(
+				_user$project$Table$stringColumn,
+				'Name',
+				function (_) {
+					return _.name;
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_user$project$Table$stringColumn,
+					'Capital',
+					function (_) {
+						return _.city;
+					}),
+				_1: {ctor: '[]'}
+			}
+		}
+	});
+var _user$project$Main$SetQuery = function (a) {
+	return {ctor: 'SetQuery', _0: a};
+};
+var _user$project$Main$view = function (_p1) {
+	var _p2 = _p1;
+	var lowerQuery = _elm_lang$core$String$toLower(_p2.query);
+	var acceptablePeople = A2(
+		_elm_lang$core$List$filter,
+		function (_p3) {
+			return A2(
+				_elm_lang$core$String$contains,
+				lowerQuery,
+				_elm_lang$core$String$toLower(
+					function (_) {
+						return _.name;
+					}(_p3)));
+		},
+		_p2.people);
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Buscar capital de um estado'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$input,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$placeholder('Letras inicias do estado'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetQuery),
+							_1: {ctor: '[]'}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A3(_user$project$Table$view, _user$project$Main$config, _p2.tableState, acceptablePeople),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$program(
+	{
+		init: _user$project$Main$init(_user$project$Main$states),
+		update: _user$project$Main$update,
+		view: _user$project$Main$view,
+		subscriptions: function (_p4) {
+			return _elm_lang$core$Platform_Sub$none;
+		}
+	})();
