@@ -86,7 +86,7 @@ config =
     { toId = .name
     , toMsg = SetTableState
     , columns =
-        [ Table.stringColumn "Name" .name
+        [ Table.stringColumn "Estado" .name
         , Table.stringColumn "Capital" .city
         ]
     }
