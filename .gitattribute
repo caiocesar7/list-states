@@ -1,2 +1,1 @@
-special-vendored-path/* linguist-vendored
-elm linguist-vendored=false
+*.elm linguist-language=Java
